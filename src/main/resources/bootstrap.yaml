@@ -4,11 +4,18 @@ spring:
   application:
     name: com-lee-gateway
   cloud:
-
     nacos:
       config:
         file-extension: yaml
         server-addr: 127.0.0.1:8848
         namespace: 9d71e8ef-ecff-40c1-a28d-67971f91060e
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 9d71e8ef-ecff-40c1-a28d-67971f91060e
+    gateway:
+      discovery:
+        locator:
+          enabled: true #使用服务发现路由
+      enabled: true
   main:
     allow-bean-definition-overriding: true

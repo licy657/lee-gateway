@@ -10,6 +10,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionLocator;
@@ -38,6 +39,7 @@ import java.util.function.Function;
 
 @Slf4j
 @Component
+@RefreshScope
 public class DynamicRouteConfig implements ApplicationEventPublisherAware, Listener {
 
     private final NacosConfigManager nacosConfigManager;
