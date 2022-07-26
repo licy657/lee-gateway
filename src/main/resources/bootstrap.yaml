@@ -15,7 +15,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true #使用服务发现路由
+          enabled: false #使用服务发现路由
       enabled: true
   main:
     allow-bean-definition-overriding: true
